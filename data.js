@@ -95,7 +95,7 @@ const DISCIPLINAS = {
     numero: 1,
     titulo: "1.1 O Processo Holístico de Engenharia de Requisitos",
     data: "2026-08-11",
-    link: "https://drive.google.com/drive/folders/SEU-LINK-AQUI"
+    link: "https://drive.google.com/drive/folders/1SOJd72ilV37RAVnu8N-xwq-WzMDXjvpG?usp=sharing"
   },
   {
     numero: 2,
@@ -282,7 +282,7 @@ const DISCIPLINAS = {
     numero: 1,
     titulo: "Fundamentos de Machine Learning",
     data: "2026-08-14",
-    link: "https://drive.google.com/drive/folders/SEU-LINK-AQUI"
+    link: "https://drive.google.com/drive/folders/1AtIY9JHvlt_ZTnNW69svUY_n6mqihyIm?usp=sharing"
   },
   {
     numero: 2,
