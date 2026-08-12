@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#142943" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Portal de Disciplinas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grid-overlay"></div>
+
+  <header class="site-header">
+    <div class="inner">
+      <p class="brand">
+        <span class="header-icon">📚</span> Portal de Disciplinas
+      </p>
+      <h1>Material de Aula</h1>
+      <div class="status-row">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="mono-tag">SEMESTRE_2026.2 · ATIVO</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <p class="section-lead">Escolha uma disciplina para ver as aulas e baixar o material.</p>
+    <div class="cards" id="cards"></div>
+  </main>
+
+  <footer>Semestre 2026.2</footer>
+
+  <script src="data.js"></script>
+  <script>
+    const container = document.getElementById("cards");
+
+    Object.keys(DISCIPLINAS).forEach((chave) => {
+      const disciplina = DISCIPLINAS[chave];
+      const qtdAulas = disciplina.aulas.length;
+      const cor = disciplina.cor || "#2f6fb0";
+
+      const card = document.createElement("a");
+      card.className = "card";
+      card.href = `disciplina.html?curso=${chave}`;
+      card.style.setProperty("--card-color", cor);
+
+      card.innerHTML = `
+        <span class="icon-badge">${disciplina.icone || "📘"}</span>
+        <span class="sigla mono-tag">${disciplina.sigla}</span>
+        <h2>${disciplina.nome}</h2>
+        ${disciplina.descricao ? `<p class="descricao">${disciplina.descricao}</p>` : ""}
+        <p class="meta mono-tag">${String(qtdAulas).padStart(2, "0")} ${qtdAulas === 1 ? "AULA DISPONÍVEL" : "AULAS DISPONÍVEIS"}</p>
+        <span class="cta">Ver aulas →</span>
+      `;
+
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>

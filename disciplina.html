@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#142943" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Disciplina</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grid-overlay"></div>
+
+  <header class="site-header">
+    <div class="inner">
+      <p class="brand mono-tag" id="sigla"></p>
+      <h1 id="nome"><span class="header-icon" id="icone"></span><span id="nome-texto"></span></h1>
+      <div class="status-row">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="mono-tag" id="semestre"></span>
+      </div>
+      <a class="back-link" href="index.html">← Voltar para todas as disciplinas</a>
+    </div>
+  </header>
+
+  <main>
+    <div id="conteudo"></div>
+  </main>
+
+  <footer>Semestre 2026.2</footer>
+
+  <script src="data.js"></script>
+  <script>
+    function formatarData(iso) {
+      const [ano, mes, dia] = iso.split("-");
+      return `${dia}/${mes}/${ano}`;
+    }
+
+    function ehRecente(iso) {
+      const dataAula = new Date(iso + "T00:00:00");
+      const diffDias = (Date.now() - dataAula.getTime()) / 86400000;
+      return diffDias >= 0 && diffDias <= 7;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const chave = params.get("curso");
+    const disciplina = DISCIPLINAS[chave];
+    const conteudo = document.getElementById("conteudo");
+
+    if (!disciplina) {
+      document.getElementById("nome-texto").textContent = "Disciplina não encontrada";
+      conteudo.innerHTML = `<div class="empty-state">Não foi possível encontrar essa disciplina. <a href="index.html">Voltar</a></div>`;
+    } else {
+      const cor = disciplina.cor || "#2f6fb0";
+      document.documentElement.style.setProperty("--card-color", cor);
+      document.title = disciplina.nome;
+      document.getElementById("sigla").textContent = disciplina.sigla;
+      document.getElementById("icone").textContent = disciplina.icone || "📘";
+      document.getElementById("nome-texto").textContent = disciplina.nome;
+      document.getElementById("semestre").textContent = `SEMESTRE_${disciplina.semestre} · ATIVO`;
+
+      if (disciplina.ementa) {
+        const ementa = disciplina.ementa;
+
+        const cargaChips = Object.entries(ementa.cargaHoraria || {})
+          .map(([rotulo, valor]) => `<span class="mono-tag">${rotulo.toUpperCase()}: ${valor}</span>`)
+          .join("");
+
+        const competenciasHtml = (ementa.competencias || [])
+          .map((c) => `<li>${c}</li>`)
+          .join("");
+
+        const unidadesHtml = (ementa.unidades || [])
+          .map(
+            (u) => `
+              <div class="unidade-card">
+                <h4>${u.titulo}</h4>
+                <ul>${u.topicos.map((t) => `<li>${t}</li>`).join("")}</ul>
+              </div>
+            `
+          )
+          .join("");
+
+        const box = document.createElement("details");
+        box.className = "ementa-box";
+        box.innerHTML = `
+          <summary>📄 Ementa e conteúdo programático</summary>
+          <div class="ementa-content">
+            <div class="ementa-meta">
+              ${ementa.codigo ? `<span class="mono-tag">CÓDIGO: ${ementa.codigo}</span>` : ""}
+              ${ementa.periodo ? `<span class="mono-tag">${ementa.periodo.toUpperCase()}</span>` : ""}
+            </div>
+            ${cargaChips ? `<div class="carga-grid">${cargaChips}</div>` : ""}
+            ${ementa.texto ? `<p class="ementa-texto">${ementa.texto}</p>` : ""}
+            ${competenciasHtml ? `<h3>Competências específicas</h3><ul class="competencias-list">${competenciasHtml}</ul>` : ""}
+            ${unidadesHtml ? `<h3>Conteúdo programático</h3><div class="unidades-grid">${unidadesHtml}</div>` : ""}
+          </div>
+        `;
+        conteudo.appendChild(box);
+      }
+
+      const aulasOrdenadas = [...disciplina.aulas].sort((a, b) => a.numero - b.numero);
+
+      if (aulasOrdenadas.length === 0) {
+        conteudo.innerHTML = `<div class="empty-state">Nenhuma aula publicada ainda.</div>`;
+      } else {
+        const progresso = document.createElement("div");
+        progresso.className = "progress-bar-wrap";
+        progresso.innerHTML = `<div class="progress-bar-fill" style="width:100%"></div>`;
+        conteudo.appendChild(progresso);
+
+        const lead = document.createElement("p");
+        lead.className = "section-lead";
+        lead.textContent = `${aulasOrdenadas.length} ${aulasOrdenadas.length === 1 ? "aula publicada" : "aulas publicadas"}`;
+        conteudo.appendChild(lead);
+
+        const lista = document.createElement("div");
+        lista.className = "aulas-list";
+
+        aulasOrdenadas.forEach((aula, indice) => {
+          const item = document.createElement("div");
+          item.className = "aula-item";
+          item.style.animationDelay = `${Math.min(indice * 0.06, 0.6)}s`;
+          item.innerHTML = `
+            <div class="aula-info">
+              <span class="aula-numero mono-tag">AULA_${String(aula.numero).padStart(2, "0")}</span>
+              <div class="aula-text">
+                <span class="aula-titulo">${aula.titulo}</span>
+                <span class="aula-data">
+                  ${formatarData(aula.data)}
+                  ${ehRecente(aula.data) ? '<span class="badge-novo">Novo</span>' : ""}
+                </span>
+              </div>
+            </div>
+            <a class="btn-download" href="${aula.link}" target="_blank" rel="noopener noreferrer">⬇ Baixar material</a>
+          `;
+          lista.appendChild(item);
+        });
+
+        conteudo.appendChild(lista);
+      }
+    }
+  </script>
+</body>
+</html>
