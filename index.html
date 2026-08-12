@@ -9,17 +9,19 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="grid-overlay"></div>
-
   <header class="site-header">
     <div class="inner">
-      <p class="brand">
-        <span class="header-icon">📚</span> Portal de Disciplinas
-      </p>
-      <h1>Material de Aula</h1>
+      <div class="institution-row">
+        <img class="institution-logo" id="institution-logo" src="" alt="" />
+        <div class="institution-text">
+          <p class="institution-name" id="institution-nome"></p>
+          <p class="course-name" id="institution-curso"></p>
+        </div>
+      </div>
+      <h1>Portal de Disciplinas</h1>
       <div class="status-row">
         <span class="status-dot" aria-hidden="true"></span>
-        <span class="mono-tag">SEMESTRE_2026.2 · ATIVO</span>
+        <span class="mono-tag" id="status-semestre"></span>
       </div>
     </div>
   </header>
@@ -29,10 +31,17 @@
     <div class="cards" id="cards"></div>
   </main>
 
-  <footer>Semestre 2026.2</footer>
+  <footer id="footer"></footer>
 
   <script src="data.js"></script>
   <script>
+    document.getElementById("institution-logo").src = INSTITUICAO.logo;
+    document.getElementById("institution-logo").alt = INSTITUICAO.sigla;
+    document.getElementById("institution-nome").textContent = `${INSTITUICAO.nome} · ${INSTITUICAO.sigla}`;
+    document.getElementById("institution-curso").textContent = INSTITUICAO.curso;
+    document.getElementById("status-semestre").textContent = "Semestre 2026.2 · Em andamento";
+    document.getElementById("footer").textContent = `${INSTITUICAO.nome} (${INSTITUICAO.sigla}) · ${INSTITUICAO.curso} · Semestre 2026.2`;
+
     const container = document.getElementById("cards");
 
     Object.keys(DISCIPLINAS).forEach((chave) => {

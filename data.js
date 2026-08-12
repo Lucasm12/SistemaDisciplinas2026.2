@@ -21,6 +21,13 @@
   livremente para acompanhar o plano de ensino oficial.
 */
 
+const INSTITUICAO = {
+  nome: "Centro Universitário Maurício de Nassau",
+  sigla: "UNINASSAU",
+  curso: "Análise e Desenvolvimento de Sistemas",
+  logo: "logo-uninassau.png"
+};
+
 const DISCIPLINAS = {
   erq: {
     nome: "Engenharia de Requisitos, Teste e Qualidade de Software",

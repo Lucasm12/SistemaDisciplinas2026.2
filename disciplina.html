@@ -9,10 +9,15 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="grid-overlay"></div>
-
   <header class="site-header">
     <div class="inner">
+      <div class="institution-row">
+        <img class="institution-logo" id="institution-logo" src="" alt="" />
+        <div class="institution-text">
+          <p class="institution-name" id="institution-nome"></p>
+          <p class="course-name" id="institution-curso"></p>
+        </div>
+      </div>
       <p class="brand mono-tag" id="sigla"></p>
       <h1 id="nome"><span class="header-icon" id="icone"></span><span id="nome-texto"></span></h1>
       <div class="status-row">
@@ -27,7 +32,7 @@
     <div id="conteudo"></div>
   </main>
 
-  <footer>Semestre 2026.2</footer>
+  <footer id="footer"></footer>
 
   <script src="data.js"></script>
   <script>
@@ -41,6 +46,12 @@
       const diffDias = (Date.now() - dataAula.getTime()) / 86400000;
       return diffDias >= 0 && diffDias <= 7;
     }
+
+    document.getElementById("institution-logo").src = INSTITUICAO.logo;
+    document.getElementById("institution-logo").alt = INSTITUICAO.sigla;
+    document.getElementById("institution-nome").textContent = `${INSTITUICAO.nome} · ${INSTITUICAO.sigla}`;
+    document.getElementById("institution-curso").textContent = INSTITUICAO.curso;
+    document.getElementById("footer").textContent = `${INSTITUICAO.nome} (${INSTITUICAO.sigla}) · ${INSTITUICAO.curso} · Semestre 2026.2`;
 
     const params = new URLSearchParams(window.location.search);
     const chave = params.get("curso");
@@ -57,7 +68,7 @@
       document.getElementById("sigla").textContent = disciplina.sigla;
       document.getElementById("icone").textContent = disciplina.icone || "📘";
       document.getElementById("nome-texto").textContent = disciplina.nome;
-      document.getElementById("semestre").textContent = `SEMESTRE_${disciplina.semestre} · ATIVO`;
+      document.getElementById("semestre").textContent = `Semestre ${disciplina.semestre} · Em andamento`;
 
       if (disciplina.ementa) {
         const ementa = disciplina.ementa;
@@ -123,7 +134,7 @@
           item.style.animationDelay = `${Math.min(indice * 0.06, 0.6)}s`;
           item.innerHTML = `
             <div class="aula-info">
-              <span class="aula-numero mono-tag">AULA_${String(aula.numero).padStart(2, "0")}</span>
+              <span class="aula-numero mono-tag">Aula ${String(aula.numero).padStart(2, "0")}</span>
               <div class="aula-text">
                 <span class="aula-titulo">${aula.titulo}</span>
                 <span class="aula-data">
