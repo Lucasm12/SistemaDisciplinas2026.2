@@ -101,7 +101,7 @@ const DISCIPLINAS = {
     numero: 2,
     titulo: "1.2 Técnicas de Elicitação, Descoberta e Priorização",
     data: "2026-08-18",
-    link: "https://drive.google.com/drive/folders/SEU-LINK-AQUI"
+    link: "https://drive.google.com/drive/folders/1no535xtFLim_Oh2G-zD-FCirrfnmvLY2?usp=sharing"
   },
   {
     numero: 3,
@@ -119,7 +119,7 @@ const DISCIPLINAS = {
     numero: 5,
     titulo: "2.1 Os Atributos e a Psicologia da Qualidade Sistêmica",
     data: "2026-09-08",
-    link: "https://drive.google.com/drive/folders/SEU-LINK-AQUI"
+    link: "https://drive.google.com/drive/folders/SEU-LINK-AQU"
   },
   {
     numero: 6,
