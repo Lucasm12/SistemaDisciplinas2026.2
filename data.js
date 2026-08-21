@@ -288,7 +288,7 @@ const DISCIPLINAS = {
     numero: 2,
     titulo: "Algoritmos Meta-Heurísticos",
     data: "2026-08-21",
-    link: "https://drive.google.com/drive/folders/SEU-LINK-AQUI"
+    link: "https://drive.google.com/drive/folders/12UL8mdMmA74p7FRt8DnSfcE_8kaGGQXH?usp=sharing"
   },
   {
     numero: 3,
