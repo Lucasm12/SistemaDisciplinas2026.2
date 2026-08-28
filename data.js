@@ -294,7 +294,7 @@ const DISCIPLINAS = {
     numero: 3,
     titulo: "Computação Natural",
     data: "2026-08-28",
-    link: "https://drive.google.com/drive/folders/SEU-LINK-AQUI"
+    link: "https://drive.google.com/drive/folders/1JWbN5WlQ_4a4bS4qYesgwriwqHGjeINp?usp=sharing"
   },
   {
     numero: 4,
