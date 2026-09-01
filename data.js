@@ -113,7 +113,7 @@ const DISCIPLINAS = {
     numero: 4,
     titulo: "1.3 Especificação, Modelagem e Documentação Formal",
     data: "2026-09-01",
-    link: "https://drive.google.com/drive/folders/SEU-LINK-AQUI"
+    link: "https://drive.google.com/drive/folders/1BCLplnM0AEbTwMUEHng11oQmWktQkWen?usp=sharing"
   },
   {
     numero: 5,
