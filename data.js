@@ -119,7 +119,7 @@ const DISCIPLINAS = {
     numero: 5,
     titulo: "2.1 Os Atributos e a Psicologia da Qualidade Sistêmica",
     data: "2026-09-08",
-    link: "https://drive.google.com/drive/folders/1Lo2XFSKnzpHQ3XhDkCOaCqcb990Gq55g?usp=sharing"
+    link: "https://drive.google.com/drive/folders/1Lo2XFSKnzpHQ3XhDkCOaCqcb990Gq55g?usp=drive_link"
   },
   {
     numero: 6,
