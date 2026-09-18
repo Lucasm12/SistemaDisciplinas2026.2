@@ -300,7 +300,7 @@ const DISCIPLINAS = {
     numero: 4,
     titulo: "Aprendizagem Supervisionada",
     data: "2026-09-04",
-    link: "https://drive.google.com/drive/folders/1tXyyf4ktalxaE299DSp4GtHvofXzPt3T?usp=drive_link"
+    link: "https://drive.google.com/drive/folders/1tXyyf4ktalxaE299DSp4GtHvofXzPt3T?usp=sharing"
   },
   {
     numero: 5,
