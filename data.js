@@ -119,13 +119,13 @@ const DISCIPLINAS = {
     numero: 5,
     titulo: "2.1 Os Atributos e a Psicologia da Qualidade Sistêmica",
     data: "2026-09-08",
-    link: "https://drive.google.com/drive/folders/SEU-LINK-AQU"
+    link: "https://drive.google.com/drive/folders/1Lo2XFSKnzpHQ3XhDkCOaCqcb990Gq55g?usp=sharing"
   },
   {
     numero: 6,
     titulo: "2.2 Modelos de Maturidade e Melhoria de Processos",
     data: "2026-09-15",
-    link: "https://drive.google.com/drive/folders/SEU-LINK-AQUI"
+    link: "https://drive.google.com/drive/folders/1mOW2XvgG1YXpfx12uO_Joeb3jYQb4G76?usp=drive_link"
   },
   {
     numero: 7,
