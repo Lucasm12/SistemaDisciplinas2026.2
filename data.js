@@ -306,13 +306,13 @@ const DISCIPLINAS = {
     numero: 5,
     titulo: "Aprendizagem Não Supervisionada",
     data: "2026-09-11",
-    link: "https://drive.google.com/drive/folders/SEU-LINK-AQUI"
+    link: "https://drive.google.com/drive/folders/1vhD8yRS6Y_uhJ-lDa7Djn-fOM-NDbrqC?usp=sharing"
   },
   {
     numero: 6,
     titulo: "Aprendizagem por Reforço",
     data: "2026-09-18",
-    link: "https://drive.google.com/drive/folders/SEU-LINK-AQUI"
+    link: "https://drive.google.com/drive/folders/1cLtIwrKwa6to4ifp-BhPQK-PwC8RG7mL?usp=sharing"
   },
   {
     numero: 7,
