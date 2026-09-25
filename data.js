@@ -318,7 +318,7 @@ const DISCIPLINAS = {
     numero: 7,
     titulo: "Aprendizagem Bayesiana",
     data: "2026-09-25",
-    link: "https://drive.google.com/drive/folders/SEU-LINK-AQUI"
+    link: "https://drive.google.com/drive/folders/19yqNkBkM9c7NW98SSfTuw8FK0mgNZbqe?usp=sharing"
   },
   {
     numero: 8,
