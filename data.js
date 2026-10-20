@@ -155,7 +155,7 @@ const DISCIPLINAS = {
     numero: 11,
     titulo: "3.2 Níveis de Validação Estruturada e Arquitetura de Execução",
     data: "2026-10-20",
-    link: "https://drive.google.com/drive/folders/SEU-LINK-AQUI"
+    link: "https://drive.google.com/drive/folders/19wZKV2749GNMHNpJFr1jTqY2Xg6qU3zy?usp=sharing"
   },
   {
     numero: 12,
