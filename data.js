@@ -342,7 +342,7 @@ const DISCIPLINAS = {
     numero: 11,
     titulo: "Modelos Paramétricos",
     data: "2026-10-23",
-    link: "https://drive.google.com/drive/folders/SEU-LINK-AQUI"
+    link: "https://drive.google.com/drive/folders/1WXhNEl9CRmGF2z-SbFkciNjETeZ3eSZe?usp=sharing"
   },
   {
     numero: 12,
