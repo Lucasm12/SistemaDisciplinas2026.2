@@ -348,7 +348,7 @@ const DISCIPLINAS = {
     numero: 12,
     titulo: "Métodos Não Paramétricos",
     data: "2026-10-30",
-    link: "https://drive.google.com/drive/folders/SEU-LINK-AQUI"
+    link: "https://drive.google.com/drive/folders/1y9127CLP2z0Zi4lHrzY07YXhV615inNq?usp=sharing"
   },
   {
     numero: 13,
