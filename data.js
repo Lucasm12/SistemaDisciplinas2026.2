@@ -167,7 +167,7 @@ const DISCIPLINAS = {
     numero: 13,
     titulo: "3.3 Técnicas Clássicas e Heurísticas de Desenho de Casos de Teste",
     data: "2026-11-03",
-    link: "https://drive.google.com/drive/folders/SEU-LINK-AQUI"
+    link: "https://drive.google.com/drive/folders/1XZljbhhtfBcVcrFe72AJsxNjIui3rnAy?usp=sharing"
   },
   {
     numero: 14,
