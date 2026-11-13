@@ -360,7 +360,7 @@ const DISCIPLINAS = {
     numero: 14,
     titulo: "Clustering",
     data: "2026-11-13",
-    link: "https://drive.google.com/drive/folders/SEU-LINK-AQUI"
+    link: "https://drive.google.com/drive/folders/1ObRJQCSJ0UKUIVrfAkPoiEzVAhIU7a93?usp=sharing"
   },
   {
     numero: 15,
